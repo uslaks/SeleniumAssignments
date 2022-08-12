@@ -21,6 +21,8 @@ public class FindIntersection {
 					
 					System.out.println("The matching number in both arrays is "+arr1[i]);
 					
+					break;
+					
 				}
 								
 			}
