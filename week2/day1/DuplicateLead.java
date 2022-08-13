@@ -59,7 +59,7 @@ public class DuplicateLead {
 		
 		// To enter values in input fields of create lead page
 		WebElement companyName = driver.findElement(By.id("createLeadForm_companyName"));
-		companyName.sendKeys("New Company");
+		companyName.sendKeys("NewCompany");
 		
 		WebElement firstName = driver.findElement(By.id("createLeadForm_firstName"));
 		firstName.sendKeys("Usha");
@@ -96,17 +96,36 @@ public class DuplicateLead {
 		// To click duplicate lead
 		WebElement duplicate = driver.findElement(By.linkText("Duplicate Lead"));
 		duplicate.click();
+		
+/*		try {
+			Thread.sleep(3000);
+			
+			if (driver.findElement(By.id("createLeadForm_companyName")).isEnabled()) {
+				
+				System.out.println("The element found");
+				driver.findElement(By.id("createLeadForm_companyName")).click();
+				
+			}
+			else {
+				System.out.println("The element not found");
+			}
+			
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}*/
+		
+		
+		// Creating the reference to webElements again as stale exception is thrown even when the element is available
+		WebElement companyName1 = driver.findElement(By.id("createLeadForm_companyName"));
+		companyName1.clear();
+		companyName1.sendKeys("NewCompany_1");
+		
+		WebElement firstName1 = driver.findElement(By.id("createLeadForm_firstName"));
+		firstName1.clear();
+		firstName1.sendKeys("Rekha");
 
-		// To clear the CompanyName & FirstName
-		companyName.clear();
-		firstName.clear();
-
-		// To enter new values for CompanyName & FirstName
-		companyName.sendKeys("NewCompany_1");
-		firstName.sendKeys("Rekha");
-
-		// To click on Create Lead Button
-		submitButton.click();
+		driver.findElement(By.className("smallSubmit")).click();
 
 		// To get the title of the resulting page after creating Duplicate Lead
 		pageTitle = driver.getTitle();
