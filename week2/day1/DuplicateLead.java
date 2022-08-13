@@ -96,27 +96,8 @@ public class DuplicateLead {
 		// To click duplicate lead
 		WebElement duplicate = driver.findElement(By.linkText("Duplicate Lead"));
 		duplicate.click();
-		
-/*		try {
-			Thread.sleep(3000);
-			
-			if (driver.findElement(By.id("createLeadForm_companyName")).isEnabled()) {
 				
-				System.out.println("The element found");
-				driver.findElement(By.id("createLeadForm_companyName")).click();
-				
-			}
-			else {
-				System.out.println("The element not found");
-			}
-			
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/
-		
-		
-		// Creating the reference to webElements again as stale exception is thrown even when the element is available
+		// Creating the reference to webElements in Duplicate lead page and entering values
 		WebElement companyName1 = driver.findElement(By.id("createLeadForm_companyName"));
 		companyName1.clear();
 		companyName1.sendKeys("NewCompany_1");
