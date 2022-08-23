@@ -27,17 +27,14 @@ public static void main(String[] args) {
 
 //		Iterate character array and add it into charSet
 		for(char eachCharecter:character) {
-
+			
 //		if the character is already in the charSet then, add it to the dupCharSet
 			if(charSet.contains(eachCharecter)) {
 
 				dupCharSet.add(eachCharecter);
 
-			} else {
-
-				charSet.add(eachCharecter);
-
-			}		
+			}
+				charSet.add(eachCharecter);	
 
 		}
 		
@@ -66,6 +63,7 @@ public static void main(String[] args) {
 			if(eachChar != ' ') {
 				
 				finalCharSet.add(eachChar);
+				
 								
 			}
 			
